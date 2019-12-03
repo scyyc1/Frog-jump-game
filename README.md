@@ -1,3 +1,2 @@
-# G52SWM_CW2_scyyc1
-
-The coursework 2 for Software Maintenance
+# Screenshot of Game
+![alt text](https://raw.githubusercontent.com/hirish99/Frogger-Arcade-Game/master/arcade.png)
