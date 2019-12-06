@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Menu.ModePageController">
+   <children>
+      <Button layoutX="177.0" layoutY="201.0" mnemonicParsing="false" prefHeight="79.0" prefWidth="245.0" text="Easy">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Button>
+      <Button fx:id="Normal" layoutX="177.0" layoutY="342.0" mnemonicParsing="false" prefHeight="79.0" prefWidth="245.0" text="Normal" onAction="#NormalMode">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Button>
+      <Button layoutX="177.0" layoutY="485.0" mnemonicParsing="false" prefHeight="79.0" prefWidth="245.0" text="Hard">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Button>
+      <Button fx:id="Back" layoutX="14.0" layoutY="666.0" mnemonicParsing="false" text="Back" onAction="#backToMenu">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

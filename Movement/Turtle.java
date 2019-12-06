@@ -1,4 +1,4 @@
-package p4_group_8_repo;
+package Movement;
 
 import javafx.scene.image.Image;
 
@@ -32,9 +32,9 @@ public class Turtle extends Actor{
 			setX(600);
 	}
 	public Turtle(int xpos, int ypos, int s, int w, int h) {
-		turtle1 = new Image("file:src/p4_group_8_repo/TurtleAnimation1.png", w, h, true, true);
-		turtle2 = new Image("file:src/p4_group_8_repo/TurtleAnimation2.png", w, h, true, true);
-		turtle3 = new Image("file:src/p4_group_8_repo/TurtleAnimation3.png", w, h, true, true);
+		turtle1 = new Image("file:src/Image/Obstacles/Turtles/TurtleAnimation1.png", w, h, true, true);
+		turtle2 = new Image("file:src/Image/Obstacles/Turtles/TurtleAnimation2.png", w, h, true, true);
+		turtle3 = new Image("file:src/Image/Obstacles/Turtles/TurtleAnimation3.png", w, h, true, true);
 		setX(xpos);
 		setY(ypos);
 		speed = s;
