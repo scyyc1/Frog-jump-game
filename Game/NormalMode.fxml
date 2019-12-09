@@ -4,210 +4,153 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
+<AnchorPane id="background" prefHeight="800.0" prefWidth="600.0" stylesheets="@../css/GamePage.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<!--<AnchorPane id="background" prefHeight="800.0" prefWidth="600.0" stylesheets="@../css/GamePage.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Menu.GameController">-->
+<!--<fx:root type="javafx.scene.layout.Pane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">-->
+<!--<Pane id="background" prefHeight="800.0" prefWidth="600.0" stylesheets="@../css/GamePage.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Menu.GameController">-->
 
-<AnchorPane prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Menu.ModePageController">
-   <children>
-      <ImageView id="Log3" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" y="166.0">
+    <children>
+      <ImageView fx:id="Log1" fitHeight="150.0" fitWidth="150.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" y="166.0">
          <image>
             <Image url="@../Image/Obstacles/Logs/log3.png" />
          </image>
       </ImageView>
-      <ImageView id="Log3" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" x="220.0" y="166.0">
+      <ImageView fx:id="Log2" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" x="220.0" y="166.0">
          <image>
             <Image url="@../Image/Obstacles/Logs/log3.png" />
          </image>
       </ImageView>
-      <ImageView id="Log3" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" x="440.0" y="166.0">
+      <ImageView fx:id="Log3" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" x="440.0" y="166.0">
          <image>
             <Image url="@../Image/Obstacles/Logs/log3.png" />
          </image>
       </ImageView>
-      <ImageView id="Logs" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" y="276.0">
+      <ImageView fx:id="Log4" fitHeight="600.0" fitWidth="400.0" layoutX="-152.0" layoutY="-33.0" pickOnBounds="true" preserveRatio="true" y="276.0">
          <image>
             <Image url="@../Image/Obstacles/Logs/logs.png" />
          </image>
       </ImageView>
-      <ImageView id="Logs" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" x="400.0" y="276.0">
+      <ImageView fx:id="Log5" fitHeight="300.0" fitWidth="300.0" layoutX="8.0" layoutY="-27.0" pickOnBounds="true" preserveRatio="true" x="400.0" y="276.0">
          <image>
             <Image url="@../Image/Obstacles/Logs/logs.png" />
          </image>
       </ImageView>
-      <ImageView id="Log3" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" x="50.0" y="329.0">
+      <ImageView fx:id="Log6" fitHeight="150.0" fitWidth="150.0" layoutX="-36.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true" x="50.0" y="329.0">
          <image>
             <Image url="@../Image/Obstacles/Logs/log3.png" />
          </image>
       </ImageView>
-      <ImageView id="Log3" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" x="270.0" y="329.0">
+      <ImageView fx:id="Log7" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" x="270.0" y="329.0">
          <image>
             <Image url="@../Image/Obstacles/Logs/log3.png" />
          </image>
       </ImageView>
-      <ImageView id="Log3" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" x="490.0" y="329.0">
+      <ImageView fx:id="Log8" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" x="490.0" y="329.0">
          <image>
             <Image url="@../Image/Obstacles/Logs/log3.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" x="500.0" y="376.0">
-         <image>
-            <Image url="@../Image/Obstacles/Turtles/TurtleAnimation1.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" x="500.0" y="376.0">
-         <image>
-            <Image url="@../Image/Obstacles/Turtles/TurtleAnimation2.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" x="300.0" y="376.0">
-         <image>
-            <Image url="@../Image/Obstacles/Turtles/TurtleAnimation1.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" x="300.0" y="376.0">
-         <image>
-            <Image url="@../Image/Obstacles/Turtles/TurtleAnimation2.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" x="500.0" y="376.0">
+      <ImageView fx:id="Turtle5" fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" x="500.0" y="376.0">
          <image>
             <Image url="@../Image/Obstacles/Turtles/TurtleAnimation3.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" x="300.0" y="376.0">
+      <ImageView fx:id="Turtle4" fitHeight="130.0" fitWidth="130.0" layoutX="-252.0" layoutY="-135.0" pickOnBounds="true" preserveRatio="true" x="300.0" y="376.0">
          <image>
             <Image url="@../Image/Obstacles/Turtles/TurtleAnimation3.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" x="200.0" y="217.0">
+      <ImageView fx:id="Turtle1" fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" x="200.0" y="217.0">
          <image>
             <Image url="@../Image/Obstacles/Turtles/TurtleAnimation1.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" x="400.0" y="217.0">
+      <ImageView fx:id="Turtle2" fitHeight="130.0" fitWidth="150.0" layoutX="15.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true" x="400.0" y="217.0">
          <image>
             <Image url="@../Image/Obstacles/Turtles/TurtleAnimation1.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" x="600.0" y="217.0">
+      <ImageView fx:id="Turtle3" fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" x="600.0" y="217.0">
          <image>
             <Image url="@../Image/Obstacles/Turtles/TurtleAnimation1.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" x="700.0" y="376.0">
+      <ImageView fx:id="Turtle6" fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" x="700.0" y="376.0">
          <image>
             <Image url="@../Image/Obstacles/Turtles/TurtleAnimation1.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" x="700.0" y="376.0">
-         <image>
-            <Image url="@../Image/Obstacles/Turtles/TurtleAnimation2Wet.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" x="600.0" y="216.0">
-         <image>
-            <Image url="@../Image/Obstacles/Turtles/TurtleAnimation2Wet.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" x="400.0" y="216.0">
-         <image>
-            <Image url="@../Image/Obstacles/Turtles/TurtleAnimation2Wet.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" x="200.0" y="216.0">
-         <image>
-            <Image url="@../Image/Obstacles/Turtles/TurtleAnimation2Wet.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" x="700.0" y="376.0">
-         <image>
-            <Image url="@../Image/Obstacles/Turtles/TurtleAnimation3Wet.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" x="600.0" y="217.0">
-         <image>
-            <Image url="@../Image/Obstacles/Turtles/TurtleAnimation3Wet.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" x="400.0" y="217.0">
-         <image>
-            <Image url="@../Image/Obstacles/Turtles/TurtleAnimation3Wet.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" x="200.0" y="217.0">
-         <image>
-            <Image url="@../Image/Obstacles/Turtles/TurtleAnimation3Wet.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" x="13.0" y="96.0">
+      <ImageView fx:id="End1" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" x="13.0" y="96.0">
          <image>
             <Image url="@../Image/Ends/End.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" x="141.0" y="96.0">
+      <ImageView fx:id="End2" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" x="141.0" y="96.0">
          <image>
             <Image url="@../Image/Ends/End.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" x="269.0" y="96.0">
+      <ImageView fx:id="End3" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" x="269.0" y="96.0">
          <image>
             <Image url="@../Image/Ends/End.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" x="398.0" y="96.0">
+      <ImageView fx:id="End4" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" x="398.0" y="96.0">
          <image>
             <Image url="@../Image/Ends/End.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" x="528.0" y="96.0">
+      <ImageView fx:id="End5" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" x="528.0" y="96.0">
          <image>
             <Image url="@../Image/Ends/End.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" y="649.0">
+      <ImageView fx:id="Truck3" fitHeight="150.0" fitWidth="150.0" layoutX="21.0" layoutY="-26.0" pickOnBounds="true" preserveRatio="true" y="649.0">
          <image>
             <Image url="@../Image/Obstacles/Trucks/truck1Right.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" x="300.0" y="649.0">
+      <ImageView fx:id="Truck4" fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" x="300.0" y="649.0">
          <image>
             <Image url="@../Image/Obstacles/Trucks/truck1Right.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" x="600.0" y="649.0">
+      <ImageView fx:id="Truck5" fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" x="600.0" y="649.0">
          <image>
             <Image url="@../Image/Obstacles/Trucks/truck1Right.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" y="540.0">
+      <ImageView fx:id="Truck1" fitHeight="250.0" fitWidth="250.0" layoutY="-69.0" pickOnBounds="true" preserveRatio="true" y="540.0">
          <image>
             <Image url="@../Image/Obstacles/Trucks/truck2Right.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" x="500.0" y="540.0">
+      <ImageView fx:id="Truck2" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" x="500.0" y="540.0">
          <image>
             <Image url="@../Image/Obstacles/Trucks/truck2Right.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" x="100.0" y="597.0">
+      <ImageView fx:id="Car2" fitHeight="80.0" fitWidth="80.0" layoutX="-51.0" layoutY="-53.0" pickOnBounds="true" preserveRatio="true" x="100.0" y="597.0">
          <image>
             <Image url="@../Image/Obstacles/Cars/car1Left.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" x="250.0" y="597.0">
+      <ImageView fx:id="Car3" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" x="250.0" y="597.0">
          <image>
             <Image url="@../Image/Obstacles/Cars/car1Left.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" x="400.0" y="597.0">
+      <ImageView fx:id="Car4" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" x="400.0" y="597.0">
          <image>
             <Image url="@../Image/Obstacles/Cars/car1Left.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" x="550.0" y="597.0">
+      <ImageView fx:id="Car5" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" x="550.0" y="597.0">
          <image>
             <Image url="@../Image/Obstacles/Cars/car1Left.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" x="500.0" y="490.0">
+      <ImageView fx:id="Car1" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" x="500.0" y="490.0">
          <image>
             <Image url="@../Image/Obstacles/Cars/car1Left.png" />
          </image>
@@ -217,5 +160,42 @@
             <Image url="@../Image/Frogger/froggerUp.png" />
          </image>
       </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" x="300.0" y="630.27619">
+         <image>
+            <Image url="@../Image/Frogger/froggerUp.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" x="300.0" y="554.08571428564">
+         <image>
+            <Image url="@../Image/Frogger/froggerUp.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" x="300.0" y="477.89523809516">
+         <image>
+            <Image url="@../Image/Frogger/froggerUp.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" x="300.0" y="325.5142857142">
+         <image>
+            <Image url="@../Image/Frogger/froggerUp.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" x="300.0" y="249.32380952372">
+         <image>
+            <Image url="@../Image/Frogger/froggerUp.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" x="300.0" y="173.1333333333">
+         <image>
+            <Image url="@../Image/Frogger/froggerUp.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" x="300.0" y="401.70476186112">
+         <image>
+            <Image url="@../Image/Frogger/froggerUp.png" />
+         </image>
+      </ImageView>
    </children>
+<!--</Pane>-->
+<!--</fx:root>-->
 </AnchorPane>

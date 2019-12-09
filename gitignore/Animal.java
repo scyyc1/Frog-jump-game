@@ -10,6 +10,7 @@ import javafx.scene.input.KeyEvent;
 
 
 public class Animal extends Actor {
+	// Actions of the frog
 	Image imgW1;
 	Image imgA1;
 	Image imgS1;
@@ -18,6 +19,9 @@ public class Animal extends Actor {
 	Image imgA2;
 	Image imgS2;
 	Image imgD2;
+
+	// The remain life
+	int life = 0;
 	int points = 0;
 	int end = 0;
 	private boolean second = false;
@@ -32,7 +36,9 @@ public class Animal extends Actor {
 	int carD = 0;
 	double w = 800;
 	ArrayList<End> inter = new ArrayList<End>();
-	public Animal(String imageLink) {
+	public Animal(String imageLink, double movement, int life) {
+		this.life = life;
+		this.movement = movement;
 		setImage(new Image(imageLink, imgSize, imgSize, true, true));
 		setX(300);
 		setY(679.8+movement);
@@ -159,6 +165,9 @@ public class Animal extends Actor {
 				setX(300);
 				setY(679.8+movement);
 				carDeath = false;
+				//
+				life -= 1;
+				System.out.println(life);
 				carD = 0;
 				setImage(new Image("file:src/Image/Frogger/froggerUp.png", imgSize, imgSize, true, true));
 				noMove = false;
@@ -189,7 +198,10 @@ public class Animal extends Actor {
 			if (carD == 5) {
 				setX(300);
 				setY(679.8+movement);
+				//
 				waterDeath = false;
+				life -= 1;
+				System.out.println(life);
 				carD = 0;
 				setImage(new Image("file:src/Image/Frogger/froggerUp.png", imgSize, imgSize, true, true));
 				noMove = false;
@@ -247,12 +259,16 @@ public class Animal extends Actor {
 		}
 	}
 	public boolean getStop() {
-		return end==5;
+		return end==1;
 	}
 	
 	public int getPoints() {
 		return points;
 	}
+
+	public int getLife() { return life; }
+
+	public void setLife(int life) { this.life = life; }
 	
 	public boolean changeScore() {
 		if (changeScore) {
@@ -260,8 +276,9 @@ public class Animal extends Actor {
 			return true;
 		}
 		return false;
+
+
 		
 	}
-	
 
 }

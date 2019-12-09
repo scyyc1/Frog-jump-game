@@ -11,7 +11,9 @@ import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 
 
 public abstract class World extends Pane {
@@ -94,10 +96,13 @@ public abstract class World extends Pane {
         getChildren().remove(actor);
     }
 
-    public <A extends Actor> List<A> getObjects(Class<A> cls) {
+    public <A extends Actor> List<A> getObjects(Class<A> cls)
+    {
         ArrayList<A> someArray = new ArrayList<A>();
-        for (Node n: getChildren()) {
-            if (cls.isInstance(n)) {
+        for (Node n: getChildren())
+        {
+            if (cls.isInstance(n))
+            {
                 someArray.add((A)n);
             }
         }

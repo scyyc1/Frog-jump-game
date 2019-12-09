@@ -1,5 +1,6 @@
 package Menu;
 
+import Game.Process;
 import Movement.*;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
@@ -7,8 +8,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -35,19 +34,19 @@ public class Main extends Application {
 		String c = "file:src/Image/Frogger/froggerUpJump-red.png";
 		main_menu.setCursor(Cursor.cursor(c));
 
-//        primaryStage.setScene(main_menu);
-//        primaryStage.show();
+        primaryStage.setScene(main_menu);
+        primaryStage.show();
 
 		//Obstacle obstacle = new Obstacle("file:src/p4_group_8_repo/truck1Right.png", 25, 25, 3);
 		//Obstacle obstacle1 = new Obstacle("file:src/p4_group_8_repo/truck2Right.png", 100, 100,2 );
 		//Obstacle obstacle2 = new Obstacle("file:src/p4_group_8_repo/truck1Right.png",0,  150, 1);
 
-		BackgroundImage froggerback = new BackgroundImage("file:src/Image/Background/Background.png");
-	    
+		BackgroundImage froggerback = new BackgroundImage("file:src/Image/Background/FrogBackground.png");
+
 		background.add(froggerback);
 
 //		background.add(new )
-		
+
 		background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 0, 166, 0.75));
 		background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 220, 166, 0.75));
 		background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 440, 166, 0.75));
@@ -59,7 +58,7 @@ public class Main extends Application {
 		background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 270, 329, 0.75));
 		background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 490, 329, 0.75));
 		//background.add(new Log("file:src/p4_group_8_repo/log3.png", 150, 570, 329, 0.75));
-		
+
 		background.add(new Turtle(500, 376, -1, 130, 130));
 		background.add(new Turtle(300, 376, -1, 130, 130));
 		background.add(new WetTurtle(700, 376, -1, 130, 130));
@@ -90,7 +89,7 @@ public class Main extends Application {
 		background.add(new End(141 + 141-13,96));
 		background.add(new End(141 + 141-13+141-13+1,96));
 		background.add(new End(141 + 141-13+141-13+141-13+3,96));
-		animal = new Animal("file:src/Image/Frogger/froggerUp.png");
+		animal = new Animal("file:src/Image/Frogger/froggerUp.png", 26.66666666666, 5);
 		background.add(animal);
 		background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 0, 649, 1, 120, 120));
 		background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 300, 649, 1, 120, 120));
@@ -110,49 +109,10 @@ public class Main extends Application {
 
 
 		background.start();
-		primaryStage.setScene(scene);
-		primaryStage.show();
-		start();  
-	}
-	public void createTimer() {
-        timer = new AnimationTimer() {
-            @Override
-            public void handle(long now) {
-            	if (animal.changeScore()) {
-            		setNumber(animal.getPoints());
-            	}
-            	if (animal.getStop()) {
-            		System.out.print("STOPP:");
-            		background.stopMusic();
-            		stop();
-            		background.stop();
-            		Alert alert = new Alert(AlertType.INFORMATION);
-            		alert.setTitle("You Have Won The Game!");
-            		alert.setHeaderText("Your High Score: "+animal.getPoints()+"!");
-            		alert.setContentText("Highest Possible Score: 800");
-            		alert.show();
-            	}
-            }
-        };
-    }
-	public void start() {
-		background.playMusic();
-    	createTimer();
-        timer.start();
-    }
+//		primaryStage.setScene(scene);
+//		primaryStage.show();
 
-    public void stop() {
-        timer.stop();
-    }
-    
-    public void setNumber(int n) {
-    	int shift = 0;
-    	while (n > 0) {
-    		  int d = n / 10;
-    		  int k = n - d * 10;
-    		  n = d;
-    		  background.add(new Digit(k, 30, 360 - shift, 25));
-    		  shift+=30;
-    		}
-    }
+		Process process = new Process(background, animal, timer);
+		process.start();
+	}
 }
