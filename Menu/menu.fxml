@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="600.0" stylesheets="@../css/MenuPage.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Menu.MenuController">
+<AnchorPane prefHeight="800.0" prefWidth="600.0" style="-fx-border-color: linear-gradient(to bottom, #82E0AA, transparent);" stylesheets="@../css/MenuPage.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Menu.MenuController">
    <children>
       <Button fx:id="mode" layoutX="194.0" layoutY="431.0" mnemonicParsing="false" onAction="#chooseMode" prefHeight="49.0" prefWidth="211.0" text="Start">
          <font>

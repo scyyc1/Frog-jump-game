@@ -1,7 +1,6 @@
 package Game;
 
 import Calculations.Rank;
-import Menu.*;
 import Movement.*;
 import javafx.animation.AnimationTimer;
 import javafx.scene.control.Alert;
@@ -13,6 +12,7 @@ public class Process
     private MyStage background;
     private Animal animal;
     private AnimationTimer timer;
+    private String mode;
 
     public Process(MyStage background, Animal animal, AnimationTimer timer)
     {
@@ -28,7 +28,8 @@ public class Process
                 if (animal.changeScore()) {
                     setNumber(animal.getPoints());
                 }
-                if (animal.getStop()) {
+                if (animal.getStop())
+                {
                     System.out.print("STOPP:");
                     background.stopMusic();
                     stop();
@@ -39,7 +40,18 @@ public class Process
                     alert.setHeaderText("Your High Score: "+score+"!");
                     try
                     {
-                        Rank.AddToRank(score);
+                        if(mode == "easy")
+                        {
+                            Rank.AddToRank(score, "./src/Rank/easyRank.txt");
+                        }
+                        else if(mode == "normal")
+                        {
+                            Rank.AddToRank(score, "./src/Rank/normalRank.txt");
+                        }
+                        else
+                        {
+                            Rank.AddToRank(score, "./src/Rank/hardRank.txt");
+                        }
                     }
                     catch (IOException e)
                     {
@@ -48,7 +60,18 @@ public class Process
                     alert.setContentText("Highest Possible Score: 800");
                     try
                     {
-                        Rank.DispalyRank();
+                        if(mode == "easy")
+                        {
+                            Rank.GetRank("./src/Rank/easyRank.txt");
+                        }
+                        else if(mode == "normal")
+                        {
+                            Rank.GetRank("./src/Rank/normalRank.txt");
+                        }
+                        else
+                        {
+                            Rank.GetRank("./src/Rank/hardRank.txt");
+                        }
                     } catch (IOException e)
                     {
                         e.printStackTrace();
@@ -60,8 +83,9 @@ public class Process
     }
 
     // Start the game
-    public void start()
+    public void start(String mode)
     {
+        this.mode = mode;
         background.playMusic();
         createTimer();
         timer.start();
@@ -79,7 +103,7 @@ public class Process
             int d = n / 10;
             int k = n - d * 10;
             n = d;
-            background.add(new Digit(k, 30, 360 - shift, 25));
+            background.add(new Digit(k, 30, 560 - shift, 10));
             shift+=30;
         }
     }

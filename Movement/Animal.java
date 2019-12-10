@@ -7,6 +7,7 @@ import javafx.event.EventHandler;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import Menu.*;
 
 
 public class Animal extends Actor {
@@ -21,7 +22,7 @@ public class Animal extends Actor {
 	Image imgD2;
 
 	// The remain life
-	int life = 0;
+	int life = 5;
 	int points = 0;
 	int end = 0;
 	private boolean second = false;
@@ -36,8 +37,8 @@ public class Animal extends Actor {
 	int carD = 0;
 	double w = 800;
 	ArrayList<End> inter = new ArrayList<End>();
-	public Animal(String imageLink, double movement, int life) {
-		this.life = life;
+	public Animal(String imageLink, double movement) {
+		setLife(SettingPageController.getLife());
 		this.movement = movement;
 		setImage(new Image(imageLink, imgSize, imgSize, true, true));
 		setX(300);
@@ -222,7 +223,8 @@ public class Animal extends Actor {
 		if (getX() == 240 && getY() == 82) {
 			stop = true;
 		}
-		if (getIntersectingObjects(Log.class).size() >= 1 && !noMove) {
+		if (getIntersectingObjects(Log.class).size() >= 1 && !noMove)
+		{
 			if(getIntersectingObjects(Log.class).get(0).getLeft())
 				move(-2,0);
 			else
@@ -231,7 +233,8 @@ public class Animal extends Actor {
 		else if (getIntersectingObjects(Turtle.class).size() >= 1 && !noMove) {
 			move(-1,0);
 		}
-		else if (getIntersectingObjects(WetTurtle.class).size() >= 1) {
+		else if (getIntersectingObjects(WetTurtle.class).size() >= 1)
+		{
 			if (getIntersectingObjects(WetTurtle.class).get(0).isSunk()) {
 				waterDeath = true;
 			} else {
@@ -258,9 +261,7 @@ public class Animal extends Actor {
 			//setY(679.8+movement);
 		}
 	}
-	public boolean getStop() {
-		return end==1;
-	}
+	public boolean getStop() { return (end==1 || life==0); }
 	
 	public int getPoints() {
 		return points;
@@ -270,8 +271,10 @@ public class Animal extends Actor {
 
 	public void setLife(int life) { this.life = life; }
 	
-	public boolean changeScore() {
-		if (changeScore) {
+	public boolean changeScore()
+	{
+		if (changeScore)
+		{
 			changeScore = false;
 			return true;
 		}

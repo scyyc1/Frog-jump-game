@@ -6,5 +6,6 @@ module Chen.Yutian.Intellij.Java12 {
         requires javafx.controls;
         requires javafx.media;
         requires javafx.fxml;
+        opens Calculations to javafx.base;
         exports Menu;
         }

@@ -9,6 +9,6 @@ public class BackgroundImage extends Actor{
 	
 	public BackgroundImage(String imageLink)
 	{
-		setImage(new Image(imageLink, 600, 800, true, true));
+		setImage(new Image(imageLink, 600, 800, false, true));
 	}
 }

@@ -1,7 +1,7 @@
 package Menu;
 
 import javafx.fxml.FXML;
-import Movement2.*;
+import Movement.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;

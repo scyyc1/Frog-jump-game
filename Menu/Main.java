@@ -89,7 +89,7 @@ public class Main extends Application {
 		background.add(new End(141 + 141-13,96));
 		background.add(new End(141 + 141-13+141-13+1,96));
 		background.add(new End(141 + 141-13+141-13+141-13+3,96));
-		animal = new Animal("file:src/Image/Frogger/froggerUp.png", 26.66666666666, 5);
+		animal = new Animal("file:src/Image/Frogger/froggerUp.png", 26.66666666666);
 		background.add(animal);
 		background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 0, 649, 1, 120, 120));
 		background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 300, 649, 1, 120, 120));
@@ -108,11 +108,11 @@ public class Main extends Application {
 		//background.add(obstacle2);
 
 
-		background.start();
+//		background.start();
 //		primaryStage.setScene(scene);
 //		primaryStage.show();
 
-		Process process = new Process(background, animal, timer);
-		process.start();
+//		Process process = new Process(background, animal, timer);
+//		process.start("easy");
 	}
 }

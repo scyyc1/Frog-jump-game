@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -43,9 +44,11 @@ public class ModePageController extends Pane
 
         MyStage background = new MyStage();
 
-        BackgroundImage froggerback = new BackgroundImage("file:src/Image/Background/FrogBackground.png");
+        BackgroundImage froggerback = new BackgroundImage("file:src/Image/Background/Background.png");
         background.add(froggerback);
 
+//        background.getChildren().add(new ImageView())
+        background.add(new Image("file:src/Image/Icons/Life.png", 20, 520, 50));
         background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 0, 166, 0.75));
         background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 220, 166, 0.75));
         background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 440, 166, 0.75));
@@ -88,7 +91,7 @@ public class ModePageController extends Pane
         background.add(new End(141 + 141-13,96));
         background.add(new End(141 + 141-13+141-13+1,96));
         background.add(new End(141 + 141-13+141-13+141-13+3,96));
-        Animal animal = new Animal("file:src/Image/Frogger/froggerUp.png", 26.66666666666, 5);
+        Animal animal = new Animal("file:src/Image/Frogger/froggerUp.png", 26.66666666666);
         background.add(animal);
         background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 0, 649, 1, 120, 120));
         background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 300, 649, 1, 120, 120));
@@ -111,7 +114,7 @@ public class ModePageController extends Pane
         stage.show();
 
         Process process = new Process(background, animal, timer);
-        process.start();
+        process.start("normal");
 
 
 //        Stage stage = (Stage) Normal.getScene().getWindow();
@@ -185,7 +188,7 @@ public class ModePageController extends Pane
         background.add(new End(141 + 141-13,96));
         background.add(new End(141 + 141-13+141-13+1,96));
         background.add(new End(141 + 141-13+141-13+141-13+3,96));
-        Animal animal = new Animal("file:src/Image/Frogger/froggerUp.png", 38.095238095238, 5);
+        Animal animal = new Animal("file:src/Image/Frogger/froggerUp.png", 38.095238095238);
         background.add(animal);
         background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 0, 629, 1, 150, 150));
         background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 300, 629, 1, 150, 150));
@@ -207,7 +210,8 @@ public class ModePageController extends Pane
         stage.setScene(scene);
         stage.show();
 
-
+        Process process = new Process(background, animal, timer);
+        process.start("easy");
     }
 
     public void HardMode() throws Exception

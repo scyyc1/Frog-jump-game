@@ -8,27 +8,9 @@ import java.util.List;
 
 public class Rank
 {
-//    public static void EnterScore(int score) throws IOException {
-//
-//        String path = "/Menu/";
-//        File file = new File(path);
-//
-//        String fileName = "Rank.txt";
-//        File filename = new File(path + fileName);
-//        if (!file.exists()) {
-//            try {
-//                file.createNewFile();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//
-//        AddToRank(score, filename);
-//    }
-
-    public static void AddToRank(int score) throws IOException
+    public static void AddToRank(int score, String path) throws IOException
     {
-        File file = new File("./src/Rank/Rank.txt");
+        File file = new File(path);
 
         // Check if the rank file doesn't exist, create one
         if (!file.exists())
@@ -84,9 +66,20 @@ public class Rank
         }
     }
 
-    public static void DispalyRank() throws IOException
+    public static ArrayList<Integer> GetRank(String path) throws IOException
     {
-        File file = new File("./src/Rank/Rank.txt");
+        File file = new File(path);
+        if (!file.exists())
+        {
+            try
+            {
+                file.createNewFile();
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+        }
 
         ArrayList<Integer> list = new ArrayList<Integer>();
         try
@@ -121,11 +114,7 @@ public class Rank
 
         ArrayList<Integer> SortList = bubbleSort(list);
 
-        for (Integer s : list)
-        {
-            System.out.println(s.intValue());
-        }
-
+        return SortList;
     }
 
     private static ArrayList<Integer> bubbleSort(ArrayList<Integer> list)
@@ -135,13 +124,13 @@ public class Rank
         {
             for (int j = 0; j < i; j++)
             {
-                if(list.get(j).compareTo(list.get(j+1)) > 0){
+                if(list.get(j).compareTo(list.get(j+1)) < 0){
                     temp = list.get(j);
                     list.set(j, list.get(j+1));
                     list.set(j+1, temp);
                 }
-            }// end inner loop
-        }//end outer loop
+            }
+        }
         return list;
-    }// end bubble sort
+    }
 }

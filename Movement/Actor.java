@@ -8,7 +8,8 @@ import java.util.ArrayList;
 
 public abstract class Actor extends ImageView{
 
-    public void move(double dx, double dy) {
+    public void move(double dx, double dy)
+    {
         setX(getX() + dx);
         setY(getY() + dy);
     }
@@ -25,10 +26,17 @@ public abstract class Actor extends ImageView{
         return this.getBoundsInLocal().getHeight();
     }
 
-    public <A extends Actor> java.util.List<A> getIntersectingObjects(Class<A> cls){
+    // Input the instance of Actor
+    public <A extends Actor> java.util.List<A> getIntersectingObjects(Class<A> cls)
+    {
         ArrayList<A> someArray = new ArrayList<A>();
-        for (A actor: getWorld().getObjects(cls)) {
-            if (actor != this && actor.intersects(this.getBoundsInLocal())) {
+        // Get every "cls" object in the stage
+        for (A actor: getWorld().getObjects(cls))
+        {
+            // Check if the current (Actor) object intersects with input (Actor) objects
+            // If it is, add the input objects to the list
+            if (actor != this && actor.intersects(this.getBoundsInLocal()))
+            {
                 someArray.add(actor);
             }
         }
@@ -39,9 +47,14 @@ public abstract class Actor extends ImageView{
         
     }
 
-    public <A extends Actor> A getOneIntersectingObject(Class<A> cls) {
+    public <A extends Actor> A getOneIntersectingObject(Class<A> cls)
+    {
         ArrayList<A> someArray = new ArrayList<A>();
-        for (A actor: getWorld().getObjects(cls)) {
+        // Get every "cls" object in the stage
+        for (A actor: getWorld().getObjects(cls))
+        {
+            // Check if the current (Actor) object intersects with input (Actor) objects
+            // If it is, add the input objects to the list
             if (actor != this && actor.intersects(this.getBoundsInLocal())) {
                 someArray.add(actor);
                 break;
