@@ -8,7 +8,7 @@
 
 <AnchorPane prefHeight="800.0" prefWidth="600.0" style="-fx-border-color: linear-gradient(to bottom, #82E0AA, transparent);" stylesheets="@../css/MenuPage.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Menu.MenuController">
    <children>
-      <Button fx:id="mode" layoutX="194.0" layoutY="431.0" mnemonicParsing="false" onAction="#chooseMode" prefHeight="49.0" prefWidth="211.0" text="Start">
+      <Button fx:id="mode" layoutX="193.0" layoutY="370.0" mnemonicParsing="false" onAction="#chooseMode" prefHeight="49.0" prefWidth="211.0" text="1 Player">
          <font>
             <Font size="30.0" />
          </font>
@@ -44,5 +44,10 @@
             <Image url="@../Image/Icons/Name.png" />
          </image>
       </ImageView>
+      <Button fx:id="TwoP" layoutX="194.0" layoutY="427.0" mnemonicParsing="false" onAction="#HardMode" prefHeight="49.0" prefWidth="211.0" text="2 Player">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

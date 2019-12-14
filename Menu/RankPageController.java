@@ -64,6 +64,7 @@ public class RankPageController implements Initializable
         {
             e.printStackTrace();
         }
+
         try
         {
             normalList = Rank.GetRank("./src/Rank/normalRank.txt");
@@ -71,6 +72,7 @@ public class RankPageController implements Initializable
         {
             e.printStackTrace();
         }
+
         try
         {
             hardList = Rank.GetRank("./src/Rank/hardRank.txt");

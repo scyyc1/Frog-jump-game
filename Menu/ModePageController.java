@@ -1,8 +1,6 @@
 package Menu;
 
-import Game.Process;
 import Movement.*;
-import Game.*;
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +8,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -47,92 +44,73 @@ public class ModePageController extends Pane
         BackgroundImage froggerback = new BackgroundImage("file:src/Image/Background/Background.png");
         background.add(froggerback);
 
-//        background.getChildren().add(new ImageView())
         background.add(new Image("file:src/Image/Icons/Life.png", 20, 520, 50));
-        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 0, 166, 0.75));
-        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 220, 166, 0.75));
-        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 440, 166, 0.75));
-        //background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 0, 166, 0.75));
-        background.add(new Log("file:src/Image/Obstacles/Logs/logs.png", 300, 0, 276, -2));
-        background.add(new Log("file:src/Image/Obstacles/Logs/logs.png", 300, 400, 276, -2));
-        //background.add(new Log("file:src/Image/Obstacles/Logs/logs.png", 300, 800, 276, -2));
-        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 50, 329, 0.75));
-        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 270, 329, 0.75));
-        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 490, 329, 0.75));
-        //background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 570, 329, 0.75));
 
-        background.add(new Turtle(500, 376, -1, 130, 130));
-        background.add(new Turtle(300, 376, -1, 130, 130));
-        background.add(new WetTurtle(700, 376, -1, 130, 130));
-        background.add(new WetTurtle(600, 217, -1, 130, 130));
-        background.add(new WetTurtle(400, 217, -1, 130, 130));
-        background.add(new WetTurtle(200, 217, -1, 130, 130));
-        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png", 200, 100, 1));
-        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png", 0, 100, 1));
-        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png", 100, 120, -1));
-        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png", 200, 120, -1));
-        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png", 100, 140, 1));
-        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png", 200, 140, 1));
-        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png", 100, 160, -1));
-        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png", 300, 160, -1));
-        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png", 100, 180, 1));
-        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png", 200, 180, 1));
-        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png", 100, 200, -1));
-        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png", 200, 200, -1));
-        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png", 100, 220, 1));
-        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png", 200, 220, 1));
-        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png", 400, 220, 1));
-        //End end2 = new End();
-        //End end3 = new End();
-        //End end4 = new End();
-        //End end5 = new End();
-        background.add(new End(13,96));
-        background.add(new End(141,96));
-        background.add(new End(141 + 141-13,96));
-        background.add(new End(141 + 141-13+141-13+1,96));
-        background.add(new End(141 + 141-13+141-13+141-13+3,96));
-        Animal animal = new Animal("file:src/Image/Frogger/froggerUp.png", 26.66666666666);
+        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 0, 172, 0.75));
+        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 220, 172, 0.75));
+        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 440, 172, 0.75));
+
+        background.add(new Log("file:src/Image/Obstacles/Logs/logs.png", 300, 0, 269, -2));
+        background.add(new Log("file:src/Image/Obstacles/Logs/logs.png", 300, 400, 269, -2));
+
+        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 50, 317, 0.75));
+        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 270, 317, 0.75));
+        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 490, 317, 0.75));
+
+        background.add(new Turtle(500, 359, -1, 130, 130));
+        background.add(new Turtle(300, 359, -1, 130, 130));
+        background.add(new WetTurtle(700, 359, -1, 130, 130));
+        background.add(new WetTurtle(600, 214, -1, 130, 130));
+        background.add(new WetTurtle(400, 214, -1, 130, 130));
+        background.add(new WetTurtle(200, 214, -1, 130, 130));
+
+        End e1 = new End(13,96);
+        End e2 = new End(141,96);
+        End e3 = new End(269, 96);
+        End e4 = new End(398,96);
+        End e5 = new End(528,96);
+
+        e1.setVisible(false);
+        e2.setVisible(false);
+        e3.setVisible(false);
+        e4.setVisible(false);
+        e5.setVisible(false);
+
+        background.add(e1);
+        background.add(e2);
+        background.add(e3);
+        background.add(e4);
+        background.add(e5);
+
+        Animal animal = new Animal(24.2424242, 1);
         background.add(animal);
-        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 0, 649, 1, 120, 120));
-        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 300, 649, 1, 120, 120));
-        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 600, 649, 1, 120, 120));
-        //background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 720, 649, 1, 120, 120));
-        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 100, 597, -1, 50, 50));
-        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 250, 597, -1, 50, 50));
-        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 400, 597, -1, 50, 50));
-        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 550, 597, -1, 50, 50));
-        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck2Right.png", 0, 540, 1, 200, 200));
-        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck2Right.png", 500, 540, 1, 200, 200));
-        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 500, 490, -5, 50, 50));
-        background.add(new Digit(0, 30, 360, 25));
+
+        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 0, 655, 1, 120, 120));
+        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 300, 655, 1, 120, 120));
+        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 600, 655, 1, 120, 120));
+        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 720, 655, 1, 120, 120));
+
+        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 100, 609, -1, 50, 50));
+        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 250, 609, -1, 50, 50));
+        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 400, 609, -1, 50, 50));
+        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 550, 609, -1, 50, 50));
+
+        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck2Right.png", 0, 558, 1, 200, 200));
+        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck2Right.png", 500, 558, 1, 200, 200));
+
+        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 450, 512, -1, 50, 50));
+        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 200, 512, -1, 50, 50));
+        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 600, 512, -1, 50, 50));
+
+        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 500, 455, -5, 50, 50));
+
         background.start();
-        //background.add(obstacle);
-        //background.add(obstacle1);
-        //background.add(obstacle2);
         Scene scene = new Scene(background, 600,800);
         stage.setScene(scene);
         stage.show();
 
         Process process = new Process(background, animal, timer);
         process.start("normal");
-
-
-//        Stage stage = (Stage) Normal.getScene().getWindow();
-//        stage.setWidth(600);
-//        stage.setHeight(800);
-//        stage.setResizable(false);
-
-//        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Game/NormalMode.fxml"));
-//        AnchorPane root = loader.load();
-//        GameController con = loader.getController();
-
-//        Parent root = (AnchorPane) FXMLLoader.load(getClass().getResource("/Game/NormalMode.fxml"));
-//        Scene s = new Scene(root);
-//        stage.setScene(s);
-
-//        GameController normal = new GameController();
-//        stage.setScene(new Scene(normal));
-
     }
 
     public void EasyMode() throws Exception
@@ -146,66 +124,56 @@ public class ModePageController extends Pane
         BackgroundImage froggerback = new BackgroundImage("file:src/Image/Background/Background.png");
         background.add(froggerback);
 
-        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 0, 171, 0.75));
-        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 220, 171, 0.75));
-        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 440, 171, 0.75));
-        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 0, 171, 0.75));
-//        background.add(new Log("file:src/Image/Obstacles/Logs/logs.png", 300, 0, 276, -2));
-        background.add(new Log("file:src/Image/Obstacles/Logs/logs.png", 400, 400, 324, -2));
-        background.add(new Log("file:src/Image/Obstacles/Logs/logs.png", 400, 800, 324, -2));
-//        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 50, 329, 0.75));
-//        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 270, 329, 0.75));
-//        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 490, 329, 0.75));
-//        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 570, 329, 0.75));
-//
-//        background.add(new Turtle(500, 376, -1, 130, 130));
-//        background.add(new Turtle(300, 376, -1, 130, 130));
-//        background.add(new WetTurtle(700, 376, -1, 130, 130));
-        background.add(new WetTurtle(600, 241, -1, 130, 130));
-        background.add(new WetTurtle(400, 241, -1, 130, 130));
-        background.add(new WetTurtle(200, 241, -1, 130, 130));
-//        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png",150, 200, 100, 1));
-//        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png",150, 0, 100, 1));
-//        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png",150, 100, 120, -1));
-//        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png",150, 200, 120, -1));
-//        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png",150, 100, 140, 1));
-//        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png",150, 200, 140, 1));
-//        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png",150, 100, 160, -1));
-//        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png",150, 300, 160, -1));
-//        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png",150, 100, 180, 1));
-//        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png",150, 200, 180, 1));
-//        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png",150, 100, 200, -1));
-//        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png",150, 200, 200, -1));
-//        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png",150, 100, 220, 1));
-//        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png",150, 200, 220, 1));
-//        //background.add(new Log("file:src/Image/Obstacles/Logs/log2.png",150, 400, 220, 1));
-//        //End end2 = new End();
-//        //End end3 = new End();
-//        //End end4 = new End();
-//        //End end5 = new End();
-        background.add(new End(13,96));
-        background.add(new End(141,96));
-        background.add(new End(141 + 141-13,96));
-        background.add(new End(141 + 141-13+141-13+1,96));
-        background.add(new End(141 + 141-13+141-13+141-13+3,96));
-        Animal animal = new Animal("file:src/Image/Frogger/froggerUp.png", 38.095238095238);
+        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 0, 164, 0.75));
+        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 220, 164, 0.75));
+        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 440, 164, 0.75));
+        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 0, 164, 0.75));
+
+        background.add(new Log("file:src/Image/Obstacles/Logs/logs.png", 300, 400, 285, -2));
+        background.add(new Log("file:src/Image/Obstacles/Logs/logs.png", 300, 800, 285, -2));
+
+        background.add(new Turtle(500, 338, -1, 130, 130));
+        background.add(new Turtle(300, 338, -1, 130, 130));
+        background.add(new Turtle(700, 338, -1, 130, 130));
+        background.add(new Turtle(600, 218, -1, 130, 130));
+        background.add(new Turtle(400, 218, -1, 130, 130));
+        background.add(new Turtle(200, 218, -1, 130, 130));
+
+        End e1 = new End(13,96);
+        End e2 = new End(141,96);
+        End e3 = new End(269, 96);
+        End e4 = new End(398,96);
+        End e5 = new End(528,96);
+
+        e1.setVisible(false);
+        e2.setVisible(false);
+        e3.setVisible(false);
+        e4.setVisible(false);
+        e5.setVisible(false);
+
+        background.add(e1);
+        background.add(e2);
+        background.add(e3);
+        background.add(e4);
+        background.add(e5);
+
+        Animal animal = new Animal(30, 1);
         background.add(animal);
-        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 0, 629, 1, 150, 150));
-        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 300, 629, 1, 150, 150));
-        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 600, 629, 1, 150, 150));
-        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 720, 629, 1, 150, 150));
-        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 100, 554, -1, 80, 80));
-//        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 250, 554, -1, 80, 80));
-        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 400, 554, -1, 80, 80));
-//        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 550, 554, -1, 80, 80));
-        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck2Right.png", 0, 476, 1, 250, 250));
-//        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck2Right.png", 500, 476, 1, 250, 250));
-//        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 500, 490, -5, 50, 50));
-        background.add(new Digit(0, 30, 360, 25));
+        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 0, 643, 1, 120, 120));
+        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 300, 643, 1, 120, 120));
+        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 600, 643, 1, 120, 120));
+        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 720, 643, 1, 120, 120));
+
+        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 100, 586, -1, 50, 50));
+        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 250, 586, -1, 50, 50));
+        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 400, 586, -1, 50, 50));
+
+        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck2Right.png", 0, 534, 1, 200, 200));
+        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck2Right.png", 500, 534, 1, 200, 200));
+
+        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 500, 464, -4, 50, 50));
         background.start();
-        //background.add(obstacle);
-        //background.add(obstacle1);
-        //background.add(obstacle2);
+
         Scene scene = new Scene(background, 600,800);
         stage.setScene(scene);
         stage.show();
@@ -216,14 +184,83 @@ public class ModePageController extends Pane
 
     public void HardMode() throws Exception
     {
-        Stage stage = (Stage) Hard.getScene().getWindow();
+        Stage stage = (Stage) Normal.getScene().getWindow();
         stage.setWidth(600);
         stage.setHeight(800);
         stage.setResizable(false);
-        Parent root = (AnchorPane) FXMLLoader.load(getClass().getResource("/Game/HardMode.fxml"));
-        Scene s = new Scene(root);
-        stage.setScene(s);
+
+        MyStage background = new MyStage();
+
+        BackgroundImage froggerback = new BackgroundImage("file:src/Image/Background/Backgroundchanged.png");
+        background.add(froggerback);
+
+        background.add(new Image("file:src/Image/Icons/Life.png", 20, 520, 50));
+
+        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 0, 172, 1.5));
+        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 220, 172, 1.5));
+        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 440, 172, 1.5));
+
+        background.add(new Log("file:src/Image/Obstacles/Logs/logs.png", 300, 0, 269, -4));
+        background.add(new Log("file:src/Image/Obstacles/Logs/logs.png", 300, 400, 269, -4));
+
+        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 50, 317, 1.5));
+        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 270, 317, 1.5));
+        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 490, 317, 1.5));
+
+        background.add(new WetTurtle(500, 359, -1, 130, 130));
+        background.add(new WetTurtle(300, 359, -1, 130, 130));
+        background.add(new WetTurtle(700, 359, -1, 130, 130));
+        background.add(new WetTurtle(600, 214, -1, 130, 130));
+        background.add(new WetTurtle(400, 214, -1, 130, 130));
+        background.add(new WetTurtle(200, 214, -1, 130, 130));
+
+        End e1 = new End(13,96);
+        End e2 = new End(141,96);
+        End e3 = new End(269, 96);
+        End e4 = new End(398,96);
+        End e5 = new End(528,96);
+
+        e1.setVisible(false);
+        e2.setVisible(false);
+        e3.setVisible(false);
+        e4.setVisible(false);
+        e5.setVisible(false);
+
+        background.add(e1);
+        background.add(e2);
+        background.add(e3);
+        background.add(e4);
+        background.add(e5);
+
+        Animal animal = new Animal(24.2424242, 1);
+        background.add(animal);
+
+        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 0, 655, 1, 120, 120));
+        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 300, 655, 1, 120, 120));
+        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 600, 655, 1, 120, 120));
+        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 720, 655, 1, 120, 120));
+
+        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 100, 609, -1, 50, 50));
+        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 250, 609, -1, 50, 50));
+        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 400, 609, -1, 50, 50));
+        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 550, 609, -1, 50, 50));
+
+        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck2Right.png", 0, 558, 1, 200, 200));
+        background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck2Right.png", 500, 558, 1, 200, 200));
+
+        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 450, 512, -3, 50, 50));
+        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 200, 512, -3, 50, 50));
+        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 600, 512, -3, 50, 50));
+
+        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 500, 455, -10, 50, 50));
+
+        background.start();
+        Scene scene = new Scene(background, 600,800);
+        stage.setScene(scene);
         stage.show();
+
+        Process process = new Process(background, animal, timer);
+        process.start("hard");
     }
 
     public void backToMenu() throws IOException
@@ -233,49 +270,5 @@ public class ModePageController extends Pane
         Scene s = new Scene(root);
         stage.setScene(s);
         stage.show();
-    }
-
-    public void createTimer() {
-        timer = new AnimationTimer() {
-            @Override
-            public void handle(long now) {
-                if (animal.changeScore()) {
-                    setNumber(animal.getPoints());
-                }
-                if (animal.getStop()) {
-                    System.out.print("STOPP:");
-                    background.stopMusic();
-                    stop();
-                    background.stop();
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("You Have Won The Game!");
-                    alert.setHeaderText("Your High Score: "+animal.getPoints()+"!");
-                    alert.setContentText("Highest Possible Score: 800");
-                    alert.show();
-                }
-            }
-        };
-    }
-    public void start() {
-        background.playMusic();
-        createTimer();
-        timer.start();
-    }
-
-    public void stop() {
-        timer.stop();
-    }
-
-    public void setNumber(int n)
-    {
-        int shift = 0;
-        while (n > 0)
-        {
-            int d = n / 10;
-            int k = n - d * 10;
-            n = d;
-            background.add(new Digit(k, 30, 360 - shift, 25));
-            shift += 30;
-        }
     }
 }

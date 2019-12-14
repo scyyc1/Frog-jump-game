@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="Pane" prefHeight="800.0" prefWidth="600.0" stylesheets="@../css/MenuPage.css" style="-fx-border-color: #85c1e9;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Menu.SettingPageController">
+<AnchorPane id="Pane" prefHeight="800.0" prefWidth="600.0" style="-fx-border-color: #85c1e9;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Menu.SettingPageController">
    <children>
       <Button fx:id="Back" layoutX="14.0" layoutY="666.0" mnemonicParsing="false" onAction="#backToMenu" text="Back">
          <font>
@@ -61,6 +61,36 @@
          </font>
       </Label>
       <Label layoutX="353.0" layoutY="126.0" text="W">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="351.0" layoutY="60.0" text="1P">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="473.0" layoutY="126.0" text="I">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Text layoutX="471.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="L">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text layoutX="472.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="J">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text layoutX="469.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="K">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Label layoutX="461.0" layoutY="60.0" text="2P">
          <font>
             <Font size="30.0" />
          </font>
