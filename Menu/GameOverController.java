@@ -10,6 +10,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Controller for game over page
+ *
+ * @author scyyc1@nottingham.ac.uk
+ */
 public class GameOverController
 {
     @FXML
@@ -18,7 +23,7 @@ public class GameOverController
     public void backToMenu() throws IOException
     {
         Stage stage = (Stage) Back.getScene().getWindow();
-        Parent root = (AnchorPane) FXMLLoader.load(getClass().getResource("menu.fxml"));
+        Parent root = (AnchorPane) FXMLLoader.load(getClass().getResource("/View/menu.fxml"));
         Scene s = new Scene(root);
         stage.setScene(s);
         stage.show();

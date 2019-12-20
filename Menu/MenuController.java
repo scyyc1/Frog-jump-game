@@ -3,7 +3,6 @@ package Menu;
 import java.io.IOException;
 
 import Game.TwoPlayer;
-import Movement.*;
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +12,14 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+/**
+ * Controller for main menu
+ *
+ * Provide entrances to other pages
+ * {@link SettingPageController}{@link ModePageController}{@link RankPageController}{@link TwoPlayer}
+ *
+ * @author scyyc1@nottingham.ac.uk
+ */
 public class MenuController
 {
     AnimationTimer timer;
@@ -41,7 +48,7 @@ public class MenuController
     public void chooseMode() throws IOException
     {
         Stage Stage = (Stage) mode.getScene().getWindow();
-        Parent root = (AnchorPane) FXMLLoader.load(getClass().getResource("ModePage.fxml"));
+        Parent root = (AnchorPane) FXMLLoader.load(getClass().getResource("/View/ModePage.fxml"));
         Scene s = new Scene(root);
         Stage.setScene(s);
         Stage.show();
@@ -50,7 +57,7 @@ public class MenuController
     public void chooseSettings() throws IOException
     {
         Stage Stage = (Stage) setting.getScene().getWindow();
-        Parent root = (AnchorPane) FXMLLoader.load(getClass().getResource("SettingPage.fxml"));
+        Parent root = (AnchorPane) FXMLLoader.load(getClass().getResource("/View/SettingPage.fxml"));
         Scene s = new Scene(root);
         Stage.setScene(s);
         Stage.show();
@@ -59,7 +66,7 @@ public class MenuController
     public void seeRanking() throws IOException
     {
         Stage Stage = (Stage) rank.getScene().getWindow();
-        Parent root = (AnchorPane) FXMLLoader.load(getClass().getResource("RankPage.fxml"));
+        Parent root = (AnchorPane) FXMLLoader.load(getClass().getResource("/View/RankPage.fxml"));
         Scene s = new Scene(root);
         Stage.setScene(s);
         Stage.show();

@@ -9,9 +9,11 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import Menu.*;
 
-
+/**
+ * The animal which the player controls
+ */
 public class Animal extends Actor {
-	// Actions of the frog
+	// The displayed appearance of the animal for every movement
 	Image imgW1;
 	Image imgA1;
 	Image imgS1;
@@ -20,30 +22,53 @@ public class Animal extends Actor {
 	Image imgA2;
 	Image imgS2;
 	Image imgD2;
+	int imgSize = 40;
 
+	// Actions of the frog
 	KeyCode up;
 	KeyCode left;
 	KeyCode right;
 	KeyCode down;
 
-	// The remain life
+	// The player number
 	int player;
+	// Life remaining
 	int life = 5;
+	// Points for current game
 	int points = 0;
+	// The end number that the player has achieved currently
 	int end = 0;
+	// Indicator to check if the animal move continuously
 	private boolean second = false;
+	// Check whether player has movement for the animal
 	boolean noMove = false;
-	double movement = 0;
+	// Determine how much to move up or down
+	double movement;
+	// Determine how much to move left or right
 	double movementX = 10.666666*2;
-	int imgSize = 40;
+
+	// Check if the animal bumps into any obstacles
 	boolean carDeath = false;
+	// Check if the animal sinks
 	boolean waterDeath = false;
+	// Indicator if the game is stop temperary
 	boolean stop = false;
+	// Indicator if the score on the screen is changed
 	boolean changeScore = false;
+	// Indicator if the life on the screen is changed
 	boolean changeLife = true;
+	// Indicator of which controls the displayed appearance of each death
 	int carD = 0;
+	// The width of the scene
 	double w = 800;
+	// How many ends that player has achieved
 	ArrayList<End> inter = new ArrayList<End>();
+
+	/**
+	 * Initialisation of the animal controlled by player
+	 * @param movement How much to move vertically
+	 * @param player The player number
+	 */
 	public Animal(double movement, int player)
 	{
 		// Basis setting
@@ -80,6 +105,9 @@ public class Animal extends Actor {
 			setSituation();
 		}
 
+		/**
+		 * Determine the movement detail interaction with keyboard
+		 */
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event)
 			{
@@ -169,7 +197,11 @@ public class Animal extends Actor {
 			
 		});
 	}
-	
+
+	/**
+	 * Determine the event of animal in various situations
+	 * @param now The gaming time
+	 */
 	@Override
 	public void act(long now) {
 		int bounds = 0;
@@ -292,6 +324,10 @@ public class Animal extends Actor {
 		}
 	}
 
+	/**
+	 * Function to signal whether to update the score on the screen
+	 * @return True if the score need to be updated on the screen
+	 */
 	public boolean changeScore()
 	{
 		if (changeScore)
@@ -302,6 +338,10 @@ public class Animal extends Actor {
 		return false;
 	}
 
+	/**
+	 * Function to signal whether to update the life on the screen
+	 * @return True if the life number need to be updated on the screen
+	 */
 	public boolean changeLife()
 	{
 		if(changeLife)
@@ -312,6 +352,9 @@ public class Animal extends Actor {
 		return false;
 	}
 
+	/**
+	 * Set the situation of animal after each death or achieving the end
+	 */
 	private void setSituation()
 	{
 		if(player == 1)
@@ -326,14 +369,33 @@ public class Animal extends Actor {
 		}
 	}
 
+	/**
+	 * Determine the situation to end the game
+	 * @return True if the game achieve a win or lose condition
+	 */
+	public boolean getStop() { return (end==2 || life==0); }
 
-	public boolean getStop() { return (end==1 || life==0); }
-	
+	/**
+	 * Getter to get the points
+	 * @return The current points of game
+	 */
 	public int getPoints() { return points; }
 
+	/**
+	 * Getter to get the lfie
+	 * @return The current life of game
+	 */
 	public int getLife() { return life; }
 
+	/**
+	 * Getter to get the how many ends have been achieved
+	 * @return How many ends have been achieved
+	 */
 	public int getEnd() { return end; }
 
+	/**
+	 * Setter to set the life of current round of game
+	 * @param life The life to initialize in each round{@link SettingPageController}
+	 */
 	public void setLife(int life) { this.life = life; }
 }

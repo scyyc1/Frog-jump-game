@@ -1,8 +1,6 @@
 package Menu;
 
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +10,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.SingleSelectionModel;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -20,6 +17,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Controller for Setting page
+ * Provide choice for player to adjust the life of each round of game
+ *
+ * @author scyyc1@nottingham.ac.uk
+ */
 public class SettingPageController implements Initializable
 {
     private static String LifeNumber = "5";
@@ -32,7 +35,7 @@ public class SettingPageController implements Initializable
     public void backToMenu() throws IOException
     {
         Stage Stage = (Stage) Back.getScene().getWindow();
-        Parent root = (AnchorPane) FXMLLoader.load(getClass().getResource("Menu.fxml"));
+        Parent root = (AnchorPane) FXMLLoader.load(getClass().getResource("/View/menu.fxml"));
         Scene s = new Scene(root);
         Stage.setScene(s);
         Stage.show();
@@ -48,7 +51,6 @@ public class SettingPageController implements Initializable
     {
         LifeNumber = life.getSelectionModel().getSelectedItem();
         lifeNum.setText(LifeNumber);
-        System.out.println(LifeNumber);
     }
 
     public static int getLife()

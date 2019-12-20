@@ -34,4 +34,11 @@ public class Show
     {
         background.add(new Digit(n, 30, 560, 50));
     }
+
+    public static void setLifePOne(int n, MyStage background)
+    {
+        background.add(new Digit(n, 20, 557, 52));
+    }
+
+    public static void setLifePTwo(int n, MyStage background) { background.add(new Digit(n, 20, 557, 25)); }
 }

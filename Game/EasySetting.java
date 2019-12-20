@@ -63,6 +63,7 @@ public class EasySetting
 
         Animal animal = new Animal(30, 1);
         background.add(animal);
+
         background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 0, 643, 1, 120, 120));
         background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 300, 643, 1, 120, 120));
         background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 600, 643, 1, 120, 120));
@@ -82,7 +83,8 @@ public class EasySetting
         stage.setScene(scene);
         stage.show();
 
-        Process process = new Process(background, animal, timer);
-        process.start("easy");
+        Process process = Process.getProcess();
+        process.setProcess(background, animal, null, timer, "easy");
+        process.start();
     }
 }

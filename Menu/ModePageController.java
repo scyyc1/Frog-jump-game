@@ -6,7 +6,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -15,6 +14,12 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import Game.*;
 
+/**
+ * Provide entrance to every mode of 1P game
+ * {@link EasySetting}{@link NormalSetting}{@link HardSetting}
+ *
+ * @author scyyc1@nottingham.ac.uk
+ */
 public class ModePageController extends Pane
 {
     AnimationTimer timer;
@@ -60,7 +65,7 @@ public class ModePageController extends Pane
     public void backToMenu() throws IOException
     {
         Stage stage = (Stage) Back.getScene().getWindow();
-        Parent root = (AnchorPane) FXMLLoader.load(getClass().getResource("menu.fxml"));
+        Parent root = (AnchorPane) FXMLLoader.load(getClass().getResource("/View/menu.fxml"));
         Scene s = new Scene(root);
         stage.setScene(s);
         stage.show();

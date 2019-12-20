@@ -14,6 +14,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Controller for page if the player pass the game
+ *
+ * @author scyyc1@nottingham.ac.uk
+ */
 public class GameWinController implements Initializable
 {
     @FXML public Button Back;
@@ -22,7 +27,7 @@ public class GameWinController implements Initializable
     public void backToMenu() throws IOException
     {
         Stage stage = (Stage) Back.getScene().getWindow();
-        Parent root = (AnchorPane) FXMLLoader.load(getClass().getResource("menu.fxml"));
+        Parent root = (AnchorPane) FXMLLoader.load(getClass().getResource("/View/menu.fxml"));
         Scene s = new Scene(root);
         stage.setScene(s);
         stage.show();

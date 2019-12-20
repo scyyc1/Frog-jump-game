@@ -12,12 +12,14 @@ public class Data
 {
     private final StringProperty rank;
     private final StringProperty score;
+    private final StringProperty name;
 
-    public Data(String rank, int score)
+    public Data(String rank, int score, String name)
     {
         String s = String.valueOf(score);
         this.rank = new SimpleStringProperty(rank);
         this.score = new SimpleStringProperty(s);
+        this.name = new SimpleStringProperty(name);
     }
 
     public final String getRank()
@@ -25,14 +27,16 @@ public class Data
         return rank.get();
     }
 
-    public final StringProperty rankProperty()
-    {
-        return rank;
-    }
+    public final StringProperty rankProperty() { return rank; }
 
     public final StringProperty scoreProperty()
     {
         return score;
+    }
+
+    public final StringProperty nameProperty()
+    {
+        return name;
     }
 
     /**

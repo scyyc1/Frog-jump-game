@@ -2,6 +2,9 @@ package Movement;
 
 import javafx.scene.image.Image;
 
+/**
+ * Turtle to stand the animal
+ */
 public class Turtle extends Actor{
 	Image turtle1;
 	Image turtle2;
@@ -9,6 +12,11 @@ public class Turtle extends Actor{
 	private int speed;
 	int i = 1;
 	boolean bool = true;
+
+	/**
+	 * Determine the movement of the frog
+	 * @param now The gaming time
+	 */
 	@Override
 	public void act(long now) {
 
@@ -31,6 +39,15 @@ public class Turtle extends Actor{
 		if (getX() < -75 && speed<0)
 			setX(600);
 	}
+
+	/**
+	 * Initialize the turtle object
+	 * @param xpos
+	 * @param ypos
+	 * @param s
+	 * @param w
+	 * @param h
+	 */
 	public Turtle(int xpos, int ypos, int s, int w, int h) {
 		turtle1 = new Image("file:src/Image/Obstacles/Turtles/TurtleAnimation1changed.png", w, h, true, true);
 		turtle2 = new Image("file:src/Image/Obstacles/Turtles/TurtleAnimation2changed.png", w, h, true, true);

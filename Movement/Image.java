@@ -1,5 +1,8 @@
 package Movement;
 
+/**
+ * A inmage with position
+ */
 public class Image extends Actor
 {
     @Override

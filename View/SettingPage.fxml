@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="Pane" prefHeight="800.0" prefWidth="600.0" style="-fx-border-color: #85c1e9;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Menu.SettingPageController">
+<AnchorPane id="Pane" prefHeight="800.0" prefWidth="600.0" style="-fx-border-color: #85c1e9;" stylesheets="@../css/MenuPage.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Menu.SettingPageController">
    <children>
       <Button fx:id="Back" layoutX="14.0" layoutY="666.0" mnemonicParsing="false" onAction="#backToMenu" text="Back">
          <font>
@@ -49,13 +49,13 @@
             <Font size="30.0" />
          </font>
       </Text>
-      <Text layoutX="136.0" layoutY="522.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Life:">
+      <Text layoutX="136.0" layoutY="594.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Life:">
          <font>
             <Font size="30.0" />
          </font>
       </Text>
-      <ComboBox fx:id="life" layoutX="294.0" layoutY="492.0" onAction="#ChooseLife" prefHeight="38.0" prefWidth="150.0" />
-      <Label fx:id="lifeNum" layoutX="293.0" layoutY="492.0" prefHeight="22.0" prefWidth="134.0" style="-fx-background-color: white; -fx-border-width: 5px; -fx-border-color: #85c1e9;" text="5" textAlignment="CENTER">
+      <ComboBox fx:id="life" layoutX="302.0" layoutY="563.0" onAction="#ChooseLife" prefHeight="38.0" prefWidth="150.0" />
+      <Label fx:id="lifeNum" layoutX="301.0" layoutY="564.0" prefHeight="22.0" prefWidth="134.0" style="-fx-background-color: white; -fx-border-width: 5px; -fx-border-color: #85c1e9;" text="5" textAlignment="CENTER">
          <font>
             <Font size="20.0" />
          </font>
@@ -95,5 +95,20 @@
             <Font size="30.0" />
          </font>
       </Label>
+      <Text layoutX="95.0" layoutY="456.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Use the keys to control the frog">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text layoutX="183.0" layoutY="490.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to avoid obstacles">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text layoutX="143.0" layoutY="524.0" strokeType="OUTSIDE" strokeWidth="0.0" text="and struggle to the end!">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

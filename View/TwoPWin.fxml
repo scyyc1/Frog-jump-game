@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Menu.TwoPWinController">
+<AnchorPane prefHeight="800.0" prefWidth="600.0" stylesheets="@../css/MenuPage.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Menu.TwoPWinController">
     <children>
         <Label layoutX="147.0" layoutY="146.0" text="You Win!">
             <font>

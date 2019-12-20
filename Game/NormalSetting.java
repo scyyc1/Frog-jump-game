@@ -91,7 +91,8 @@ public class NormalSetting
         stage.setScene(scene);
         stage.show();
 
-        Process process = new Process(background, animal, timer);
-        process.start("normal");
+        Process process = Process.getProcess();
+        process.setProcess(background, animal, null, timer, "normal");
+        process.start();
     }
 }

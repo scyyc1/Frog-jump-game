@@ -2,6 +2,9 @@ package Movement;
 
 import javafx.scene.image.Image;
 
+/**
+ * Beckground image
+ */
 public class BackgroundImage extends Actor{
 
 	@Override

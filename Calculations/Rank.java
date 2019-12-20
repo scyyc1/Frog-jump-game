@@ -1,5 +1,6 @@
 package Calculations;
 
+import Menu.NameController;
 import javafx.scene.control.Alert;
 
 import java.io.*;
@@ -12,14 +13,23 @@ import java.util.List;
  */
 public class Rank
 {
+    ArrayList<Integer> list = null;
+    ArrayList<String> nameList = null;
+
+    public Rank()
+    {
+        list = new ArrayList<Integer>();
+        nameList = new ArrayList<String>();
+    }
+
     /**
      *The function takes the score calculated from the game {@link Movement.Animal}
-     * and add the score to the file {@link Process}. Each line represent a score
+     * and add the score to the file (controlled by {@link Process}). Each line represent a score
      * @param score The score recorded in game
      * @param path The corresponding file to store
-     * @throws IOException
+     * @throws IOException if fail to open file or fail to create or write the file
      */
-    public static void AddToRank(int score, String path) throws IOException
+    public void AddToRank(int score, String path) throws IOException
     {
         File file = new File(path);
 
@@ -36,42 +46,55 @@ public class Rank
             }
         }
 
-        // Write to the end of the rank file
-        FileWriter fw = new FileWriter(file,true);
-        BufferedWriter bufw = new BufferedWriter(fw);
+        UpdateRank(path);
+        list.add(score);
+        nameList.add(NameController.getName());
+        bubbleSort();
 
-        try
+        // Write to the end of the rank file
+        FileWriter fw = new FileWriter(file,false);
+        BufferedWriter bufw = new BufferedWriter(fw);
+        bufw.write("");
+
+        for(int i = 0; (i<list.size() && i<5); i++)
         {
-            String temp = String.valueOf(score);
-            bufw.write(temp);
-            bufw.newLine();
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-        finally
-        {
-            if (bufw != null)
+            try
             {
-                try
-                {
-                    bufw.close();
-                }
-                catch (IOException e)
-                {
-                    e.printStackTrace();
-                }
+                fw = new FileWriter(file,true);
+                bufw = new BufferedWriter(fw);
+                String temp = String.valueOf(list.get(i));
+                bufw.write(temp);
+                bufw.newLine();
+                bufw.write(nameList.get(i));
+                bufw.newLine();
             }
-            if (fw != null)
+            catch (IOException e)
             {
-                try
+                e.printStackTrace();
+            }
+            finally
+            {
+                if (bufw != null)
                 {
-                    fw.close();
+                    try
+                    {
+                        bufw.close();
+                    }
+                    catch (IOException e)
+                    {
+                        e.printStackTrace();
+                    }
                 }
-                catch (IOException e)
+                if (fw != null)
                 {
-                    e.printStackTrace();
+                    try
+                    {
+                        fw.close();
+                    }
+                    catch (IOException e)
+                    {
+                        e.printStackTrace();
+                    }
                 }
             }
         }
@@ -81,9 +104,9 @@ public class Rank
      * Get the rank information in the files and display in {@link Menu.RankPageController}
      * @param path The path to corresponding mode of rank
      * @return  The rank to display in {@link Menu.RankPageController}
-     * @throws IOException
+     * @throws IOException if fail to open file or create the file
      */
-    public static ArrayList<Integer> GetRank(String path) throws IOException
+    public void UpdateRank(String path) throws IOException
     {
         File file = new File(path);
         if (!file.exists())
@@ -98,7 +121,6 @@ public class Rank
             }
         }
 
-        ArrayList<Integer> list = new ArrayList<Integer>();
         try
         {
             if (file.isFile() && file.exists())
@@ -108,10 +130,19 @@ public class Rank
 
                 String lineTxt = null;
 
+                int counter = 0;
                 while ((lineTxt = bufferedReader.readLine()) != null)
                 {
-                    int temp = Integer.parseInt(lineTxt);
-                    list.add(temp);
+                    counter++;
+                    if(counter % 2 != 0)
+                    {
+                       int temp = Integer.parseInt(lineTxt);
+                       list.add(temp);
+                    }
+                    else
+                    {
+                        nameList.add(lineTxt);
+                    }
                 }
                 bufferedReader.close();
                 read.close();
@@ -128,31 +159,40 @@ public class Rank
             System.out.println("Error");
             e.printStackTrace();
         }
+    }
 
-        ArrayList<Integer> SortList = bubbleSort(list);
+    public ArrayList<Integer> getList()
+    {
+        return list;
+    }
 
-        return SortList;
+    public ArrayList<String> getNameList()
+    {
+        return nameList;
     }
 
     /**
      * Rearrange the rank in descending order
-     * @param list The list to rearrange
      * @return The rearranged list
      */
-    private static ArrayList<Integer> bubbleSort(ArrayList<Integer> list)
+    private void bubbleSort()
     {
         int temp;
+        String tempName;
         for (int i = list.size() - 1; i > 0; i--)
         {
             for (int j = 0; j < i; j++)
             {
-                if(list.get(j).compareTo(list.get(j+1)) < 0){
+                if(list.get(j).compareTo(list.get(j+1)) < 0)
+                {
+                    tempName = nameList.get(j);
                     temp = list.get(j);
                     list.set(j, list.get(j+1));
                     list.set(j+1, temp);
+                    nameList.set(j, nameList.get(j+1));
+                    nameList.set(j+1, tempName);
                 }
             }
         }
-        return list;
     }
 }

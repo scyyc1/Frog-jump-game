@@ -91,7 +91,8 @@ public class HardSetting
         stage.setScene(scene);
         stage.show();
 
-        Process process = new Process(background, animal, timer);
-        process.start("hard");
+        Process process = Process.getProcess();
+        process.setProcess(background, animal, null, timer, "hard");
+        process.start();
     }
 }

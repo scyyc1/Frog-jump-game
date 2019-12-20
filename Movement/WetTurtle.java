@@ -2,6 +2,10 @@ package Movement;
 
 import javafx.scene.image.Image;
 
+/**
+ * Wet turtle object to stand the frog
+ * The wet turtle can go down into water
+ */
 public class WetTurtle extends Actor{
 	Image turtle1;
 	Image turtle2;

@@ -5,6 +5,12 @@ import javafx.animation.AnimationTimer;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * The game setting and display of the 2P mode
+ * Making use of singleton design pattern to ensure the only access in one round
+ *
+ * @author scyyc1@nottingham.ac.uk
+ */
 public class TwoPlayer
 {
     private static TwoPlayer tp = new TwoPlayer();
@@ -87,7 +93,8 @@ public class TwoPlayer
         stage.setScene(scene);
         stage.show();
 
-        TwoPProcess process = new TwoPProcess(background, animal1, animal2, timer);
-        process.start("normal");
+        Process process = Process.getProcess();
+        process.setProcess(background, animal1, animal2, timer, "2P");
+        process.start();
     }
 }
