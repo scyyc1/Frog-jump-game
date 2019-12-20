@@ -44,7 +44,7 @@
             <Image url="@../Image/Icons/Name.png" />
          </image>
       </ImageView>
-      <Button fx:id="TwoP" layoutX="194.0" layoutY="427.0" mnemonicParsing="false" onAction="#HardMode" prefHeight="49.0" prefWidth="211.0" text="2 Player">
+      <Button fx:id="TwoP" layoutX="194.0" layoutY="427.0" mnemonicParsing="false" onAction="#TwoPMode" prefHeight="49.0" prefWidth="211.0" text="2 Player">
          <font>
             <Font size="30.0" />
          </font>

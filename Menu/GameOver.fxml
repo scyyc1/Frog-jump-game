@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Menu.GameOverController">
+<AnchorPane prefHeight="800.0" prefWidth="600.0" stylesheets="@../css/MenuPage.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Menu.GameOverController">
    <children>
       <Label layoutX="157.0" layoutY="267.0" text="Game Over!">
          <font>
             <Font size="50.0" />
          </font>
       </Label>
-      <Button fx:id="Back" layoutX="246.0" layoutY="443.0" onAction="#backToMenu" mnemonicParsing="false" text="Back">
+      <Button fx:id="Back" layoutX="246.0" layoutY="443.0" mnemonicParsing="false" onAction="#backToMenu" text="Back">
          <font>
             <Font size="30.0" />
          </font>

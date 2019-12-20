@@ -3,6 +3,11 @@ package Calculations;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+/**
+ * The defined data type for rank function to store the rank permanent rank
+ *
+ * @author scyyc1@nottingham.ac.uk
+ */
 public class Data
 {
     private final StringProperty rank;
@@ -30,6 +35,11 @@ public class Data
         return score;
     }
 
+    /**
+     * The method to transform the score from string to in
+     * As the score stored in rank file is string
+     * @return the score in the data structure
+     */
     public int getScore()
     {
         int temp = Integer.valueOf(score.get());

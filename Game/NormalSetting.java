@@ -5,21 +5,27 @@ import javafx.animation.AnimationTimer;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class TwoPlayer
+/**
+ * The game setting and display of the normal mode
+ * Making use of singleton design pattern to ensure the only access in one round
+ *
+ * @author scyyc1@nottingham.ac.uk
+ */
+public class NormalSetting
 {
-    private static TwoPlayer tp = new TwoPlayer();
+    private static NormalSetting normal = new NormalSetting();
 
     private static AnimationTimer timer;
 
-    private TwoPlayer() {};
+    private NormalSetting () {};
 
-    public static TwoPlayer getTP() { return tp; }
+    public static NormalSetting getNormalSetting() { return normal;}
 
     public static void start(Stage stage)
     {
         MyStage background = new MyStage();
 
-        BackgroundImage froggerback = new BackgroundImage("file:src/Image/Background/Backgroundchanged2P.png");
+        BackgroundImage froggerback = new BackgroundImage("file:src/Image/Background/Backgroundchanged.png");
         background.add(froggerback);
 
         background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 0, 172, 0.75));
@@ -58,10 +64,8 @@ public class TwoPlayer
         background.add(e4);
         background.add(e5);
 
-        Animal animal1 = new Animal(24.2424242, 1);
-        background.add(animal1);
-        Animal animal2 = new Animal(24.2424242, 2);
-        background.add(animal2);
+        Animal animal = new Animal(24.2424242, 1);
+        background.add(animal);
 
         background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 0, 655, 1, 120, 120));
         background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 300, 655, 1, 120, 120));
@@ -87,7 +91,7 @@ public class TwoPlayer
         stage.setScene(scene);
         stage.show();
 
-        TwoPProcess process = new TwoPProcess(background, animal1, animal2, timer);
+        Process process = new Process(background, animal, timer);
         process.start("normal");
     }
 }

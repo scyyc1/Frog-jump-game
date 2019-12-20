@@ -6,8 +6,19 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Rank class makes use of {@link Data} type to store the rank data
+ * @author scyyc1@nottingham.ac.uk
+ */
 public class Rank
 {
+    /**
+     *The function takes the score calculated from the game {@link Movement.Animal}
+     * and add the score to the file {@link Process}. Each line represent a score
+     * @param score The score recorded in game
+     * @param path The corresponding file to store
+     * @throws IOException
+     */
     public static void AddToRank(int score, String path) throws IOException
     {
         File file = new File(path);
@@ -66,6 +77,12 @@ public class Rank
         }
     }
 
+    /**
+     * Get the rank information in the files and display in {@link Menu.RankPageController}
+     * @param path The path to corresponding mode of rank
+     * @return  The rank to display in {@link Menu.RankPageController}
+     * @throws IOException
+     */
     public static ArrayList<Integer> GetRank(String path) throws IOException
     {
         File file = new File(path);
@@ -117,6 +134,11 @@ public class Rank
         return SortList;
     }
 
+    /**
+     * Rearrange the rank in descending order
+     * @param list The list to rearrange
+     * @return The rearranged list
+     */
     private static ArrayList<Integer> bubbleSort(ArrayList<Integer> list)
     {
         int temp;

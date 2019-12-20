@@ -27,27 +27,31 @@ public class Animal extends Actor {
 	KeyCode down;
 
 	// The remain life
-	int player = 0;
+	int player;
 	int life = 5;
 	int points = 0;
 	int end = 0;
 	private boolean second = false;
 	boolean noMove = false;
-	double movement = 13.3333333*2;
+	double movement = 0;
 	double movementX = 10.666666*2;
 	int imgSize = 40;
 	boolean carDeath = false;
 	boolean waterDeath = false;
 	boolean stop = false;
 	boolean changeScore = false;
+	boolean changeLife = true;
 	int carD = 0;
 	double w = 800;
 	ArrayList<End> inter = new ArrayList<End>();
-	public Animal(double movement, int player) {
+	public Animal(double movement, int player)
+	{
+		// Basis setting
 		setLife(SettingPageController.getLife());
 		this.movement = movement;
 		this.player = player;
 
+		// Set the appearance of frog according to player type
 		setImage(new Image("file:src/Image/Frogger/"+ player +"/froggerUp.png", imgSize, imgSize, true, true));
 		imgW1 = new Image("file:src/Image/Frogger/"+ player +"/froggerUp.png", imgSize, imgSize, true, true);
 		imgA1 = new Image("file:src/Image/Frogger/"+ player +"/froggerLeft.png", imgSize, imgSize, true, true);
@@ -58,13 +62,13 @@ public class Animal extends Actor {
 		imgS2 = new Image("file:src/Image/Frogger/"+ player +"/froggerDownJump.png", imgSize, imgSize, true, true);
 		imgD2 = new Image("file:src/Image/Frogger/"+ player +"/froggerRightJump.png", imgSize, imgSize, true, true);
 
+		// Set the controlling way for different player
 		if(player == 1)
 		{
 			this.up = KeyCode.W;
 			this.left = KeyCode.A;
 			this.right = KeyCode.D;
 			this.down = KeyCode.S;
-
 			setSituation();
 		}
 		else if(player == 2)
@@ -73,93 +77,94 @@ public class Animal extends Actor {
 			this.left = KeyCode.J;
 			this.right = KeyCode.L;
 			this.down = KeyCode.K;
-
 			setSituation();
 		}
 
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
-			public void handle(KeyEvent event){
-				if (noMove) {
-					
-				}
+			public void handle(KeyEvent event)
+			{
+				if (noMove) {}
 				else {
-				if (second)
-				{
-					if (event.getCode() == up) {
-		                move(0, -movement);
-		                changeScore = false;
-		                setImage(imgW1);
-		                second = false;
-		            }
-		            else if (event.getCode() == left) {
-		            	 move(-movementX, 0);
-		            	 setImage(imgA1);
-		            	 second = false;
-		            }
-		            else if (event.getCode() == down) {
-		            	 move(0, movement);
-		            	 setImage(imgS1);
-		            	 second = false;
-		            }
-		            else if (event.getCode() == right) {
-		            	 move(movementX, 0);
-		            	 setImage(imgD1);
-		            	 second = false;
-		            }
-				}
-				else if (event.getCode() == up) {
-	                move(0, -movement);
-	                setImage(imgW2);
-	                second = true;
-	            }
-	            else if (event.getCode() == left) {
-	            	 move(-movementX, 0);
-	            	 setImage(imgA2);
-	            	 second = true;
-	            }
-	            else if (event.getCode() == down) {
-	            	 move(0, movement);
-	            	 setImage(imgS2);
-	            	 second = true;
-	            }
-	            else if (event.getCode() == right) {
-	            	 move(movementX, 0);
-	            	 setImage(imgD2);
-	            	 second = true;
-	            }
-	        }
+					changeLife = false;
+					if (second)
+					{
+						if (event.getCode() == up) {
+							move(0, -movement);
+							changeScore = false;
+							setImage(imgW1);
+							second = false;
+						}
+						else if (event.getCode() == left) {
+							 move(-movementX, 0);
+							 setImage(imgA1);
+							 second = false;
+						}
+						else if (event.getCode() == down) {
+							 move(0, movement);
+							 setImage(imgS1);
+							 second = false;
+						}
+						else if (event.getCode() == right) {
+							 move(movementX, 0);
+							 setImage(imgD1);
+							 second = false;
+						}
+					}
+					else if (event.getCode() == up) {
+						move(0, -movement);
+						setImage(imgW2);
+						second = true;
+					}
+					else if (event.getCode() == left) {
+						 move(-movementX, 0);
+						 setImage(imgA2);
+						 second = true;
+					}
+					else if (event.getCode() == down) {
+						 move(0, movement);
+						 setImage(imgS2);
+						 second = true;
+					}
+					else if (event.getCode() == right) {
+						 move(movementX, 0);
+						 setImage(imgD2);
+						 second = true;
+					}
+	        	}
 			}
 		});	
 		setOnKeyReleased(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
 				if (noMove) {}
 				else {
-				if (event.getCode() == up) {
-					if (getY() < w) {
-						changeScore = true;
-						w = getY();
-						points+=10;
+					changeLife = false;
+					if (event.getCode() == up)
+					{
+						if (getY() < w) {
+							changeScore = true;
+							w = getY();
+							points+=10;
+						}
+						move(0, -movement);
+						setImage(imgW1);
+						second = false;
 					}
-	                move(0, -movement);
-	                setImage(imgW1);
-	                second = false;
-	            }
-	            else if (event.getCode() == left) {
-	            	 move(-movementX, 0);
-	            	 setImage(imgA1);
-	            	 second = false;
-	            }
-	            else if (event.getCode() == down) {
-	            	 move(0, movement);
-	            	 setImage(imgS1);
-	            	 second = false;
-	            }
-	            else if (event.getCode() == right) {
-	            	 move(movementX, 0);
-	            	 setImage(imgD1);
-	            	 second = false;
-	            }
-	        }
+					else if (event.getCode() == left) {
+						 move(-movementX, 0);
+						 setImage(imgA1);
+						 second = false;
+					}
+					else if (event.getCode() == down) {
+						 move(0, movement);
+						 setImage(imgS1);
+						 second = false;
+					}
+					else if (event.getCode() == right) {
+						 move(movementX, 0);
+						 setImage(imgD1);
+						 second = false;
+					}
+				}
 			}
 			
 		});
@@ -169,8 +174,7 @@ public class Animal extends Actor {
 	public void act(long now) {
 		int bounds = 0;
 		if (getY()<0 || getY()>734) {
-			setX(300);
-			setY(679.8+movement);
+			setSituation();
 		}
 		if (getX()<0) {
 			move(movement*2, 0);
@@ -191,20 +195,20 @@ public class Animal extends Actor {
 			}
 			if (carD == 4) {
 				setSituation();
-
+				life -= 1;
+				changeLife = true;
 				carDeath = false;
 				//
-				life -= 1;
 				System.out.println(life);
 				carD = 0;
 				setImage(new Image("file:src/Image/Frogger/"+ player +"/froggerUp.png", imgSize, imgSize, true, true));
 				noMove = false;
-				if (points>50) {
+				if (points>50)
+				{
 					points-=50;
 					changeScore = true;
 				}
 			}
-			
 		}
 		if (waterDeath) {
 			noMove = true;
@@ -225,16 +229,15 @@ public class Animal extends Actor {
 			}
 			if (carD == 5) {
 				setSituation();
-				//
-				waterDeath = false;
 				life -= 1;
+				changeLife = true;
+				waterDeath = false;
 				System.out.println(life);
 				carD = 0;
 				setImage(new Image("file:src/Image/Frogger/"+ player +"/froggerUp.png", imgSize, imgSize, true, true));
 				noMove = false;
 				if (points>50) {
 					points-=50;
-					changeScore = true;
 				}
 			}
 			
@@ -269,7 +272,8 @@ public class Animal extends Actor {
 		}
 		else if (getIntersectingObjects(End.class).size() >= 1) {
 			inter = (ArrayList<End>) getIntersectingObjects(End.class);
-			if (getIntersectingObjects(End.class).get(0).isActivated()) {
+			if (getIntersectingObjects(End.class).get(0).isActivated())
+			{
 				end--;
 				points-=50;
 			}
@@ -280,15 +284,34 @@ public class Animal extends Actor {
 			temp.setVisible(true);
 			temp.setEnd();
 			end++;
-			setX(300);
-			setY(679.8+movement);
+
+			setSituation();
 		}
 		else if (getY()<405){
 			waterDeath = true;
-			//setX(300);
-			//setY(679.8+movement);
 		}
 	}
+
+	public boolean changeScore()
+	{
+		if (changeScore)
+		{
+			changeScore = false;
+			return true;
+		}
+		return false;
+	}
+
+	public boolean changeLife()
+	{
+		if(changeLife)
+		{
+			changeLife = false;
+			return true;
+		}
+		return false;
+	}
+
 	private void setSituation()
 	{
 		if(player == 1)
@@ -306,25 +329,11 @@ public class Animal extends Actor {
 
 	public boolean getStop() { return (end==1 || life==0); }
 	
-	public int getPoints() {
-		return points;
-	}
+	public int getPoints() { return points; }
 
 	public int getLife() { return life; }
 
+	public int getEnd() { return end; }
+
 	public void setLife(int life) { this.life = life; }
-	
-	public boolean changeScore()
-	{
-		if (changeScore)
-		{
-			changeScore = false;
-			return true;
-		}
-		return false;
-
-
-		
-	}
-
 }

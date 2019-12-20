@@ -5,36 +5,42 @@ import javafx.animation.AnimationTimer;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class TwoPlayer
+/**
+ * The game setting and display of the normal mode
+ * Making use of singleton design pattern to ensure the only access in one round
+ *
+ * @author scyyc1@nottingham.ac.uk
+ */
+public class HardSetting
 {
-    private static TwoPlayer tp = new TwoPlayer();
+    private static HardSetting hard = new HardSetting();
 
     private static AnimationTimer timer;
 
-    private TwoPlayer() {};
+    private HardSetting () {};
 
-    public static TwoPlayer getTP() { return tp; }
+    public static HardSetting getHardSetting() { return hard;}
 
     public static void start(Stage stage)
     {
         MyStage background = new MyStage();
 
-        BackgroundImage froggerback = new BackgroundImage("file:src/Image/Background/Backgroundchanged2P.png");
+        BackgroundImage froggerback = new BackgroundImage("file:src/Image/Background/Backgroundchanged.png");
         background.add(froggerback);
 
-        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 0, 172, 0.75));
-        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 220, 172, 0.75));
-        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 440, 172, 0.75));
+        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 0, 172, 1.5));
+        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 220, 172, 1.5));
+        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 440, 172, 1.5));
 
-        background.add(new Log("file:src/Image/Obstacles/Logs/logs.png", 300, 0, 269, -2));
-        background.add(new Log("file:src/Image/Obstacles/Logs/logs.png", 300, 400, 269, -2));
+        background.add(new Log("file:src/Image/Obstacles/Logs/logs.png", 300, 0, 269, -4));
+        background.add(new Log("file:src/Image/Obstacles/Logs/logs.png", 300, 400, 269, -4));
 
-        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 50, 317, 0.75));
-        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 270, 317, 0.75));
-        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 490, 317, 0.75));
+        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 50, 317, 1.5));
+        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 270, 317, 1.5));
+        background.add(new Log("file:src/Image/Obstacles/Logs/log3.png", 150, 490, 317, 1.5));
 
-        background.add(new Turtle(500, 359, -1, 130, 130));
-        background.add(new Turtle(300, 359, -1, 130, 130));
+        background.add(new WetTurtle(500, 359, -1, 130, 130));
+        background.add(new WetTurtle(300, 359, -1, 130, 130));
         background.add(new WetTurtle(700, 359, -1, 130, 130));
         background.add(new WetTurtle(600, 214, -1, 130, 130));
         background.add(new WetTurtle(400, 214, -1, 130, 130));
@@ -58,10 +64,8 @@ public class TwoPlayer
         background.add(e4);
         background.add(e5);
 
-        Animal animal1 = new Animal(24.2424242, 1);
-        background.add(animal1);
-        Animal animal2 = new Animal(24.2424242, 2);
-        background.add(animal2);
+        Animal animal = new Animal(24.2424242, 1);
+        background.add(animal);
 
         background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 0, 655, 1, 120, 120));
         background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck1"+"Right.png", 300, 655, 1, 120, 120));
@@ -76,18 +80,18 @@ public class TwoPlayer
         background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck2Right.png", 0, 558, 1, 200, 200));
         background.add(new Obstacle("file:src/Image/Obstacles/Trucks/truck2Right.png", 500, 558, 1, 200, 200));
 
-        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 450, 512, -1, 50, 50));
-        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 200, 512, -1, 50, 50));
-        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 600, 512, -1, 50, 50));
+        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 450, 512, -3, 50, 50));
+        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 200, 512, -3, 50, 50));
+        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 600, 512, -3, 50, 50));
 
-        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 500, 455, -5, 50, 50));
+        background.add(new Obstacle("file:src/Image/Obstacles/Cars/car1Left.png", 500, 455, -10, 50, 50));
 
         background.start();
         Scene scene = new Scene(background, 600,800);
         stage.setScene(scene);
         stage.show();
 
-        TwoPProcess process = new TwoPProcess(background, animal1, animal2, timer);
-        process.start("normal");
+        Process process = new Process(background, animal, timer);
+        process.start("hard");
     }
 }

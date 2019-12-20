@@ -14,8 +14,7 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-        Parent menu = FXMLLoader.load(getClass().getResource("menu.fxml"));
-
+        Parent menu = FXMLLoader.load(getClass().getResource("Name.fxml"));
         Scene main_menu = new Scene(menu);
 
 		// Set the style of cursor

@@ -1,17 +1,20 @@
-package Menu;
+package Game;
 
 import Calculations.Rank;
+import Calculations.Show;
+import Menu.GameWinController;
 import Movement.*;
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Describe the process of game and control its start and end
+ */
 public class Process
 {
     private MyStage background;
@@ -30,20 +33,20 @@ public class Process
         timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
+                if (animal.changeLife())
+                {
+                    Show.setLife(animal.getLife(), background);
+                }
                 if (animal.changeScore())
                 {
-                    setNumber(animal.getPoints());
+                    Show.setScore(animal.getPoints(), background);
                 }
                 if (animal.getStop())
                 {
-                    System.out.print("STOPP:");
                     background.stopMusic();
                     stop();
                     background.stop();
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("You Have Won The Game!");
                     int score = animal.getPoints();
-                    alert.setHeaderText("Your High Score: "+score+"!");
                     try
                     {
                         if(mode == "easy")
@@ -63,7 +66,6 @@ public class Process
                     {
                         e.printStackTrace();
                     }
-                    alert.setContentText("Highest Possible Score: 800");
 
                     try
                     {
@@ -83,7 +85,6 @@ public class Process
                     {
                         e.printStackTrace();
                     }
-                    alert.show();
 
                     Parent root = null;
 
@@ -116,7 +117,6 @@ public class Process
                         }
                     }
 
-
                     Stage stage = (Stage) background.getScene().getWindow();
                     Scene scene = new Scene(root);
                     stage.setScene(scene);
@@ -126,7 +126,11 @@ public class Process
         };
     }
 
-    // Start the game
+    /**
+     * Start the game process
+     *
+     * @param mode justify which mode to start
+     */
     public void start(String mode)
     {
         this.mode = mode;
@@ -138,17 +142,5 @@ public class Process
     public void stop()
     {
         timer.stop();
-    }
-
-    public void setNumber(int n)
-    {
-        int shift = 0;
-        while (n > 0) {
-            int d = n / 10;
-            int k = n - d * 10;
-            n = d;
-            background.add(new Digit(k, 30, 560 - shift, 10));
-            shift+=30;
-        }
     }
 }
