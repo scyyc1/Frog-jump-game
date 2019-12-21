@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="600.0" stylesheets="@../css/MenuPage.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Menu.GameOverController">
+   <children>
+      <Label layoutX="157.0" layoutY="267.0" text="Game Over!">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <Button fx:id="Back" layoutX="246.0" layoutY="443.0" mnemonicParsing="false" onAction="#backToMenu" text="Back">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="32.0" fitWidth="55.0" layoutX="227.0" layoutY="359.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/Icons/Life.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="287.0" layoutY="355.0" text="X   0">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

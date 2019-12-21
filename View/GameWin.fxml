@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="600.0" stylesheets="@../css/MenuPage.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Menu.GameWinController">
+   <children>
+      <Label layoutX="147.0" layoutY="146.0" text="You Win!">
+         <font>
+            <Font size="70.0" />
+         </font>
+      </Label>
+      <Button fx:id="Back" layoutX="246.0" layoutY="443.0" mnemonicParsing="false" onAction="#backToMenu" text="Back">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Label fx:id="score" layoutX="264.0" layoutY="360.0" prefHeight="39.0" prefWidth="115.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="220.0" layoutY="292.0" text="Your score:">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

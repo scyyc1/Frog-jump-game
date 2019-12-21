@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="Pane" prefHeight="800.0" prefWidth="600.0" stylesheets="@../css/MenuPage.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Menu.RankPageController">
+    <children>
+        <Button fx:id="Back" layoutX="14.0" layoutY="666.0" mnemonicParsing="false" onAction="#backToMenu" text="Back">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+      <TableView fx:id="easy" layoutX="156.0" layoutY="74.0" prefHeight="180.0" prefWidth="270.0" style="-fx-background-color: transparent;">
+        <columns>
+          <TableColumn fx:id="easy_rank" prefWidth="100.0" text="Rank" />
+          <TableColumn fx:id="easy_score" prefWidth="100.0" text="Score" />
+            <TableColumn fx:id="easy_name" prefWidth="75.0" text="Name" />
+        </columns>
+      </TableView>
+      <TableView fx:id="normal" layoutX="156.0" layoutY="294.0" prefHeight="180.0" prefWidth="270.0" style="-fx-background-color: transparent;">
+        <columns>
+          <TableColumn fx:id="normal_rank" prefWidth="100.0" text="Rank" />
+          <TableColumn fx:id="normal_score" prefWidth="100.0" text="Score" />
+            <TableColumn fx:id="normal_name" prefWidth="75.0" text="Name" />
+        </columns>
+      </TableView>
+      <TableView fx:id="hard" layoutX="155.0" layoutY="505.0" prefHeight="180.0" prefWidth="270.0" style="-fx-background-color: transparent;">
+        <columns>
+          <TableColumn fx:id="hard_score" prefWidth="100.0" text="Score" />
+          <TableColumn fx:id="hard_rank" prefWidth="100.0" text="Rank" />
+            <TableColumn fx:id="hard_name" prefWidth="75.0" text="Name" />
+        </columns>
+      </TableView>
+      <Text fill="#00c3ff" layoutX="263.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" textAlignment="CENTER" wrappingWidth="72.79999999999995">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Text>
+      <Text fill="#ff7400" layoutX="235.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Normal" textAlignment="CENTER" wrappingWidth="128.0000122070312">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Text>
+      <Text fill="RED" layoutX="264.0" layoutY="499.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hard" textAlignment="CENTER" wrappingWidth="72.79999999999995">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Text>
+    </children>
+</AnchorPane>
